@@ -1,6 +1,9 @@
 {
   "extends": "@react-native-community",
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "double", { "avoidEscape": true }]
+  }
 }
 
 // {
