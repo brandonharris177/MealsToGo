@@ -3,20 +3,20 @@ import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { colors, spacing } from './src/utils/styling';
 
-const isAndroid = Platform.OS === 'android'
+const isAndroid = Platform.OS === 'android';
 
 export default function App() {
   return (
     <>
       <SafeAreaView style={styles.container}>
-          <View style={styles.searchView}>
-            <Text>Search</Text>
-          </View>
-          <View style={styles.listView}>
-            <Text>List</Text>
-          </View>
+        <View style={styles.searchView}>
+          <Text>Search</Text>
+        </View>
+        <View style={styles.listView}>
+          <Text>List</Text>
+        </View>
       </SafeAreaView>
-      <ExpoStatusBar style='auto'/>
+      <ExpoStatusBar style="auto" />
     </>
   );
 }
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     justifyContent: 'center',
     padding: spacing.sm,
-  }, 
+  },
   listView: {
     flex: 1,
     backgroundColor: colors.primary,
     padding: spacing.sm,
-  }
+  },
 });
