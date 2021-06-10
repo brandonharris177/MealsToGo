@@ -5,8 +5,5 @@
     "env": {
       "react-native-globals/all": true
     },
-    "parser": "babel-eslint",
-    "rules": {
-      "strict": 0
-    }
+    "parser": "babel-eslint"
   }
