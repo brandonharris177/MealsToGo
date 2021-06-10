@@ -4,11 +4,10 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
-import { RestaurantInfo } from "../components/Restaurant-info.component";
+import { RestaurantInfo } from "../components/RestaurantCard";
 import { colors, spacing } from "../../../utils/styling";
 
 const isAndroid = Platform.OS === "android";
