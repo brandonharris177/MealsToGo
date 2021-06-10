@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
+import { RestaurantInfo } from "../components/Restaurant-info.component";
 import { colors, spacing } from "../../../utils/styling";
 
 const isAndroid = Platform.OS === "android";
@@ -27,7 +28,7 @@ export const RestauantsScreen = () => {
           />
         </View>
         <View style={styles.listView}>
-          <Text>List</Text>
+          <RestaurantInfo />
         </View>
       </SafeAreaView>
     </>
