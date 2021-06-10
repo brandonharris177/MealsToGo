@@ -1,7 +1,12 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
+import styled from "styled-components/native";
 import { colors, spacing } from "../../../utils/styling";
+
+const CardCover = styled(Card.Cover)`
+  padding: ${spacing.med}px;
+  color: ${colors.secondary};
+`;
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
@@ -18,12 +23,11 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
 
   return (
     <Card>
-      <Card.Cover
+      <CardCover
         key={name}
         source={{
           uri: photos[0],
         }}
-        style={styles.cardCover}
       />
       <Card.Content>
         <Title>{name}</Title>
@@ -32,10 +36,3 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     </Card>
   );
 };
-
-const styles = StyleSheet.create({
-  cardCover: {
-    padding: spacing.med,
-    backgroundColor: colors.secondary,
-  },
-});
