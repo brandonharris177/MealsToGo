@@ -4,7 +4,6 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
