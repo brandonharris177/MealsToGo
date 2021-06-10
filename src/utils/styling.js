@@ -19,6 +19,6 @@ export const fontSizes = {
 };
 
 export const colors = {
-  primary: 'blue',
-  secondary: 'white',
+  primary: "blue",
+  secondary: "white",
 };
