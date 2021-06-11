@@ -12,15 +12,13 @@ const Container = styled(SafeAreaView)`
 `;
 
 const SearchView = styled(View)`
-  background-color: ${(props) => props.theme.colors.brand.secondary};
   justify-content: center;
   padding: ${(props) => props.theme.space[1]};
 `;
 
 const ListView = styled(View)`
   flex: 1;
-  background-color: ${(props) => props.theme.colors.brand.primary};
-  padding: ${(props) => props.theme.space[1]};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestauantsScreen = () => {
