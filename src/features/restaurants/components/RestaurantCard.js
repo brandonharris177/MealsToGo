@@ -18,14 +18,14 @@ const StyledTitle = styled(Title)`
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
-    name = "restaurant",
+    name = "Restaurant Name Unavailable",
     icon,
     photos = [
       "https://images.unsplash.com/photo-1609167830220-7164aa360951?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     ],
-    adress = "123 Main Street",
-    isOpenNow = true,
-    rating = 4,
+    adress = "Restaurant Adress Unavailable",
+    isOpenNow = false,
+    rating = 3,
     isClosedTemporarily = false,
   } = restaurant;
 
