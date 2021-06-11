@@ -9,19 +9,19 @@ const isAndroid = Platform.OS === "android";
 
 const Container = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${isAndroid ? StatusBar.currentHeight : 0};
+  margin-top: ${isAndroid ? StatusBar.currentHeight : 0}px;
 `;
 
 const SearchView = styled(View)`
   background-color: ${colors.secondary};
   justify-content: center;
-  padding: ${spacing.sm}px;
+  padding: ${spacing.sm}%;
 `;
 
 const ListView = styled(View)`
   flex: 1;
   background-color: ${colors.primary};
-  padding: ${spacing.sm}px;
+  padding: ${spacing.sm}%;
 `;
 
 export const RestauantsScreen = () => {

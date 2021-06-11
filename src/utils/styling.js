@@ -1,11 +1,11 @@
 export const spacing = {
-  xxsm: 5,
-  xsm: 10,
-  sm: 15,
-  med: 20,
-  lg: 40,
-  xl: 80,
-  xxl: 160,
+  xxsm: 1,
+  xsm: 2,
+  sm: 3,
+  med: 4,
+  lg: 5,
+  xl: 6,
+  xxl: 7,
 };
 
 export const fontSizes = {

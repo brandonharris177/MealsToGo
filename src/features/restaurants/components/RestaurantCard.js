@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { colors, spacing } from "../../../utils/styling";
 
 const CardCover = styled(Card.Cover)`
-  padding: ${spacing.med}px;
+  padding: ${spacing.lg}%;
   color: ${colors.secondary};
 `;
 
