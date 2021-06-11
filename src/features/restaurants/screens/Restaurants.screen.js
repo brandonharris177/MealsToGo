@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import {
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-} from "react-native";
+import { Platform, SafeAreaView, StatusBar, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfo } from "../components/RestaurantCard";
-import { colors, spacing } from "../../../utils/styling";
+import styled from "styled-components/native";
 
 const isAndroid = Platform.OS === "android";
+
+const Container = styled(SafeAreaView)`
+  flex: 1;
+  margin-top: ${isAndroid ? StatusBar.currentHeight : 0}px;
+`;
+
+const SearchView = styled(View)`
+  justify-content: center;
+  padding: ${(props) => props.theme.space[1]};
+`;
+
+const ListView = styled(View)`
+  flex: 1;
+  padding: ${(props) => props.theme.space[3]};
+`;
 
 export const RestauantsScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,35 +27,18 @@ export const RestauantsScreen = () => {
   const onChangeSearch = (query) => setSearchQuery(query);
   return (
     <>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.searchView}>
+      <Container>
+        <SearchView>
           <Searchbar
             placeholder="Search"
             onChangeText={onChangeSearch}
             value={searchQuery}
           />
-        </View>
-        <View style={styles.listView}>
+        </SearchView>
+        <ListView>
           <RestaurantInfo />
-        </View>
-      </SafeAreaView>
+        </ListView>
+      </Container>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: isAndroid ? StatusBar.currentHeight : 0,
-  },
-  searchView: {
-    backgroundColor: colors.secondary,
-    justifyContent: "center",
-    padding: spacing.sm,
-  },
-  listView: {
-    flex: 1,
-    backgroundColor: colors.primary,
-    padding: spacing.sm,
-  },
-});
