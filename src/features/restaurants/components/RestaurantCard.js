@@ -3,12 +3,17 @@ import { Card, Title, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
 
 const StyledCard = styled(Card)`
-  color: ${(props) => props.theme.colors.bg.primary};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 const CardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[3]};
   color: ${(props) => props.theme.colors.bg.primary};
+`;
+
+const StyledTitle = styled(Title)`
+  font-family: ${(props) => props.theme.fonts.heading};
+  color: ${(props) => props.theme.colors.ui.primary};
 `;
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
@@ -33,7 +38,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
         }}
       />
       <Card.Content>
-        <Title>{name}</Title>
+        <StyledTitle>{name}</StyledTitle>
         <Paragraph>{adress}</Paragraph>
       </Card.Content>
     </StyledCard>
