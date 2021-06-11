@@ -1,11 +1,10 @@
 import React from "react";
 import { Card, Title, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
-import { colors, spacing } from "../../../utils/styling";
 
 const CardCover = styled(Card.Cover)`
-  padding: ${spacing.lg}%;
-  color: ${colors.secondary};
+  padding: ${(props) => props.theme.space[3]};
+  color: ${(props) => props.theme.colors.brand.secondary};
 `;
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
