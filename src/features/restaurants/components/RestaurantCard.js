@@ -4,6 +4,7 @@ import { Card, Title } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import styled from "styled-components/native";
 import star from "../../../../assets/star";
+import open from "../../../../assets/open";
 
 const StyledCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -24,10 +25,16 @@ const Adress = styled(Text)`
   font-size: ${(props) => props.theme.fontSizes.caption};
 `;
 
+const RatingOpenWrapper = styled(View)`
+  justify-content: space-between;
+  flex-direction: row;
+`;
+
 const RatingWrapper = styled(View)`
   flex-direction: row;
   padding-top: ${(props) => props.theme.space[2]};
   padding-bottom: ${(props) => props.theme.space[2]};
+  justify-content: space-between;
 `;
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
@@ -55,17 +62,22 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
       />
       <Card.Content>
         <StyledTitle>{name}</StyledTitle>
-        {rating !== null ? (
-          <RatingWrapper>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
-            ))}
-          </RatingWrapper>
-        ) : (
-          <RatingWrapper>
-            <Text>Rating Unavailable</Text>
-          </RatingWrapper>
-        )}
+        <RatingOpenWrapper>
+          {rating !== null ? (
+            <>
+              <RatingWrapper>
+                {ratingArray.map(() => (
+                  <SvgXml xml={star} width={20} height={20} />
+                ))}
+              </RatingWrapper>
+            </>
+          ) : (
+            <RatingWrapper>
+              <Text>Rating Unavailable</Text>
+            </RatingWrapper>
+          )}
+          <SvgXml xml={open} width={20} height={20} />
+        </RatingOpenWrapper>
         <Adress>{adress}</Adress>
       </Card.Content>
     </StyledCard>
