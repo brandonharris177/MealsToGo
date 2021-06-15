@@ -76,7 +76,11 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               <Text>Rating Unavailable</Text>
             </RatingWrapper>
           )}
-          <SvgXml xml={open} width={20} height={20} />
+          {isOpenNow === false ? (
+            <></>
+          ) : (
+            <SvgXml xml={open} width={20} height={20} />
+          )}
         </RatingOpenWrapper>
         <Adress>{adress}</Adress>
       </Card.Content>
