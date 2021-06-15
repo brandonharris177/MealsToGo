@@ -37,7 +37,7 @@ const RatingWrapper = styled(View)`
   justify-content: space-between;
 `;
 
-const HoursUnkown = styled(Text)`
+const Closed = styled(Text)`
   color: ${(props) => props.theme.colors.text.error};
 `;
 
@@ -81,9 +81,11 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             </RatingWrapper>
           )}
           {isOpenNow === null ? (
-            <HoursUnkown>Hours Unknown</HoursUnkown>
-          ) : (
+            <Closed>Hours Unknown</Closed>
+          ) : isOpenNow === true ? (
             <SvgXml xml={open} width={20} height={20} />
+          ) : (
+            <Closed>Closed</Closed>
           )}
         </RatingOpenWrapper>
         <Adress>{adress}</Adress>
