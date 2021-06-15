@@ -37,6 +37,10 @@ const RatingWrapper = styled(View)`
   justify-content: space-between;
 `;
 
+const HoursUnkown = styled(Text)`
+  color: ${(props) => props.theme.colors.text.error};
+`;
+
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
     name = "Restaurant Name Unavailable",
@@ -45,7 +49,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAAB+klEQVR42u2bu0oDQRSGf8RAtNNgL1gIKQXBJxAM+AxbpLAQLHyBYGG7kICFEFifIkgI+AIRLJJGBMVeIsuCCpuMjRuyca+z1wn/N+2ZnPPBnh3IngEIIYQQQog/degYw4TIeZkYQ0c9WfEVdGDnXvristFBRb78fqHFO6svq9AuRfkCAm25Z98ujYAt0wt6acoXENDjC4xKJTCKL2CWSsCMLyBKtihAAQpQgAIUoAAFKEABClCAAhSgAAUoQAEKUEBtgS4MlQUeUcWmxJ/3JRH4wO7f9x9LRYEpGvPf11QUuHJlMFQTuMeaK0O8TshQoIubCFFvqHl8CbWKFxiiinUMQqK+ceiZRStawHmrbOE5MO7MN49RpMAUJ/P4fUx84+4C8kTthEwEWq4dxz7f9p+wETITYBUj0Ft6qwAXHlET7IXm0ooQeMW2x67bpagZTiNlM/IW+MKBz4jOgyvuOmK28E5IWaDpu6+Gl3nU4N9DJt8JqQp0Q0r5hIDAO3ZiZdTyEhiiGrK3ARs/OIqd08hDwDm6grnEucSQVVAnpCSweHRlMyNpZSvQynzMU8tSoBfjrSKPkZWA99GVPt6dkFjA7+jKqxMSCzRzHXjW+McWBSiQVED5wVflR4+VH/5Wfvxe+QsQK3AFRflLQE4vKHwNixBCCCFktfkFvnhXh90kWS4AAAAASUVORK5CYII=",
     ],
     adress = "Restaurant Adress Unavailable",
-    isOpenNow = false,
+    isOpenNow = null,
     rating = null,
     isClosedTemporarily = false,
   } = restaurant;
@@ -76,8 +80,8 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               <Text>Rating Unavailable</Text>
             </RatingWrapper>
           )}
-          {isOpenNow === false ? (
-            <></>
+          {isOpenNow === null ? (
+            <HoursUnkown>Hours Unknown</HoursUnkown>
           ) : (
             <SvgXml xml={open} width={20} height={20} />
           )}
