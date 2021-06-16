@@ -32,7 +32,6 @@ const RatingOpenWrapper = styled(View)`
 
 const RatingWrapper = styled(View)`
   flex-direction: row;
-  padding-top: ${(props) => props.theme.space[2]};
   padding-bottom: ${(props) => props.theme.space[2]};
   justify-content: space-between;
 `;
@@ -43,6 +42,12 @@ const IconWrapper = styled(View)`
 
 const Closed = styled(Text)`
   color: ${(props) => props.theme.colors.text.error};
+`;
+
+const TypeIcon = styled(Image)`
+  width: ${(props) => props.theme.sizes[1]};
+  height: ${(props) => props.theme.sizes[1]};
+  margin-left: ${(props) => props.theme.space[2]};
 `;
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
@@ -94,9 +99,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             ) : (
               <Closed>CLOSED</Closed>
             )}
-            {icon && (
-              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
-            )}
+            {icon && <TypeIcon source={{ uri: icon }} />}
           </IconWrapper>
         </RatingOpenWrapper>
         <Adress>{adress}</Adress>
