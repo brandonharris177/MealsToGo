@@ -77,15 +77,17 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             </>
           ) : (
             <RatingWrapper>
-              <Text>Rating Unavailable</Text>
+              <Text>Ratings Unavailable</Text>
             </RatingWrapper>
           )}
-          {isOpenNow === null ? (
-            <Closed>Hours Unknown</Closed>
+          {isClosedTemporarily === true ? (
+            <Closed>TEMPORARILY CLOSED</Closed>
+          ) : isOpenNow === null ? (
+            <Closed>HOURS UNKNOWN</Closed>
           ) : isOpenNow === true ? (
             <SvgXml xml={open} width={20} height={20} />
           ) : (
-            <Closed>Closed</Closed>
+            <Closed>CLOSED</Closed>
           )}
         </RatingOpenWrapper>
         <Adress>{adress}</Adress>
