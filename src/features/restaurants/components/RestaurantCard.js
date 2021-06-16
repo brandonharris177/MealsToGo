@@ -1,42 +1,17 @@
 import React from "react";
-import { Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
-import styled from "styled-components/native";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Text } from "../../../components/typography/text.component";
-
-const StyledCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const CardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
-  color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RatingOpenWrapper = styled(View)`
-  justify-content: space-between;
-  flex-direction: row;
-`;
-
-const RatingWrapper = styled(View)`
-  flex-direction: row;
-  padding-bottom: ${(props) => props.theme.space[2]};
-  justify-content: space-between;
-`;
-
-const IconWrapper = styled(View)`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const TypeIcon = styled(Image)`
-  width: ${(props) => props.theme.sizes[1]};
-  height: ${(props) => props.theme.sizes[1]};
-  margin-left: ${(props) => props.theme.space[2]};
-`;
+import {
+  CardCover,
+  IconWrapper,
+  RatingOpenWrapper,
+  RatingWrapper,
+  StyledCard,
+  TypeIcon,
+} from "./RestaurantCardStyling.js";
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
