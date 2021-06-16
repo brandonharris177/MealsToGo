@@ -1,10 +1,11 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
-import { Card, Title } from "react-native-paper";
+import { Image, View } from "react-native";
+import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import styled from "styled-components/native";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+import { Text } from "../../../components/typography/text.component";
 
 const StyledCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -13,16 +14,6 @@ const StyledCard = styled(Card)`
 const CardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[3]};
   color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const StyledTitle = styled(Title)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-
-const Adress = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
 `;
 
 const RatingOpenWrapper = styled(View)`
@@ -38,10 +29,7 @@ const RatingWrapper = styled(View)`
 
 const IconWrapper = styled(View)`
   flex-direction: row;
-`;
-
-const Closed = styled(Text)`
-  color: ${(props) => props.theme.colors.text.error};
+  align-items: center;
 `;
 
 const TypeIcon = styled(Image)`
@@ -74,7 +62,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
         }}
       />
       <Card.Content>
-        <StyledTitle>{name}</StyledTitle>
+        <Text variant="label">{name}</Text>
         <RatingOpenWrapper>
           {rating !== null ? (
             <>
@@ -91,18 +79,18 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
           )}
           <IconWrapper>
             {isClosedTemporarily === true ? (
-              <Closed>TEMPORARILY CLOSED</Closed>
+              <Text variant="error">TEMPORARILY CLOSED</Text>
             ) : isOpenNow === null ? (
-              <Closed>HOURS UNKNOWN</Closed>
+              <Text variant="error">HOURS UNKNOWN</Text>
             ) : isOpenNow === true ? (
               <SvgXml xml={open} width={20} height={20} />
             ) : (
-              <Closed>CLOSED</Closed>
+              <Text variant="error">CLOSED</Text>
             )}
             {icon && <TypeIcon source={{ uri: icon }} />}
           </IconWrapper>
         </RatingOpenWrapper>
-        <Adress>{adress}</Adress>
+        <Text variant="caption">{adress}</Text>
       </Card.Content>
     </StyledCard>
   );
