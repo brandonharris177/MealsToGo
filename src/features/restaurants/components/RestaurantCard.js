@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { Card, Title } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import styled from "styled-components/native";
@@ -37,6 +37,10 @@ const RatingWrapper = styled(View)`
   justify-content: space-between;
 `;
 
+const IconWrapper = styled(View)`
+  flex-direction: row;
+`;
+
 const Closed = styled(Text)`
   color: ${(props) => props.theme.colors.text.error};
 `;
@@ -44,7 +48,7 @@ const Closed = styled(Text)`
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
     name = "Restaurant Name Unavailable",
-    icon,
+    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAAB+klEQVR42u2bu0oDQRSGf8RAtNNgL1gIKQXBJxAM+AxbpLAQLHyBYGG7kICFEFifIkgI+AIRLJJGBMVeIsuCCpuMjRuyca+z1wn/N+2ZnPPBnh3IngEIIYQQQog/degYw4TIeZkYQ0c9WfEVdGDnXvristFBRb78fqHFO6svq9AuRfkCAm25Z98ujYAt0wt6acoXENDjC4xKJTCKL2CWSsCMLyBKtihAAQpQgAIUoAAFKEABClCAAhSgAAUoQAEKUEBtgS4MlQUeUcWmxJ/3JRH4wO7f9x9LRYEpGvPf11QUuHJlMFQTuMeaK0O8TshQoIubCFFvqHl8CbWKFxiiinUMQqK+ceiZRStawHmrbOE5MO7MN49RpMAUJ/P4fUx84+4C8kTthEwEWq4dxz7f9p+wETITYBUj0Ft6qwAXHlET7IXm0ooQeMW2x67bpagZTiNlM/IW+MKBz4jOgyvuOmK28E5IWaDpu6+Gl3nU4N9DJt8JqQp0Q0r5hIDAO3ZiZdTyEhiiGrK3ARs/OIqd08hDwDm6grnEucSQVVAnpCSweHRlMyNpZSvQynzMU8tSoBfjrSKPkZWA99GVPt6dkFjA7+jKqxMSCzRzHXjW+McWBSiQVED5wVflR4+VH/5Wfvxe+QsQK3AFRflLQE4vKHwNixBCCCFktfkFvnhXh90kWS4AAAAASUVORK5CYII=",
     ],
@@ -80,15 +84,20 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               <Text>Ratings Unavailable</Text>
             </RatingWrapper>
           )}
-          {isClosedTemporarily === true ? (
-            <Closed>TEMPORARILY CLOSED</Closed>
-          ) : isOpenNow === null ? (
-            <Closed>HOURS UNKNOWN</Closed>
-          ) : isOpenNow === true ? (
-            <SvgXml xml={open} width={20} height={20} />
-          ) : (
-            <Closed>CLOSED</Closed>
-          )}
+          <IconWrapper>
+            {isClosedTemporarily === true ? (
+              <Closed>TEMPORARILY CLOSED</Closed>
+            ) : isOpenNow === null ? (
+              <Closed>HOURS UNKNOWN</Closed>
+            ) : isOpenNow === true ? (
+              <SvgXml xml={open} width={20} height={20} />
+            ) : (
+              <Closed>CLOSED</Closed>
+            )}
+            {icon && (
+              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            )}
+          </IconWrapper>
         </RatingOpenWrapper>
         <Adress>{adress}</Adress>
       </Card.Content>
