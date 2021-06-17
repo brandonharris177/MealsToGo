@@ -1,4 +1,5 @@
-import { mocks } from "./mock/";
+import { mocks } from "./mock";
+const camelize = require("camelize");
 
 export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
   return new Promise((res, rej) => {
@@ -12,7 +13,7 @@ export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
 
 restaurantsRequest()
   .then((result) => {
-    return result;
+    return camelize(result);
   })
   .catch((error) => {
     console.log(error);
