@@ -1,4 +1,5 @@
 import React from "react";
+import { Text, View } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
@@ -27,6 +28,22 @@ export default function App() {
 
   const Tab = createBottomTabNavigator();
 
+  const Map = () => {
+    return (
+      <View>
+        <Text>Map</Text>
+      </View>
+    );
+  };
+
+  const Settings = () => {
+    return (
+      <View>
+        <Text>Settings</Text>
+      </View>
+    );
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -34,6 +51,8 @@ export default function App() {
           <NavigationContainer>
             <Tab.Navigator>
               <Tab.Screen name="Restauants" component={RestauantsScreen} />
+              <Tab.Screen name="Map" component={Map} />
+              <Tab.Screen name="Settings" component={Settings} />
             </Tab.Navigator>
           </NavigationContainer>
         </Container>
