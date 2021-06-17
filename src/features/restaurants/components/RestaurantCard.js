@@ -11,7 +11,7 @@ import {
   RatingWrapper,
   StyledCard,
   TypeIcon,
-} from "./RestaurantCardStyling.js";
+} from "./RestaurantCard.styling.js";
 
 export const RestaurantCard = ({ restaurant = {} }) => {
   const {
