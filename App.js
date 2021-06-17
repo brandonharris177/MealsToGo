@@ -10,10 +10,6 @@ import { Navigation } from "./src/components/navigation/Navigation";
 import { theme } from "./src/infrastructure/theme";
 import { Container } from "./App.styling";
 
-//use next 2 lines only for mock testing
-import { restaurantsRequest } from "./src/services/restaurants/Restaurants.service";
-console.log(restaurantsRequest());
-
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
