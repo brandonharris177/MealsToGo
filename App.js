@@ -26,20 +26,14 @@ export default function App() {
 
   const Tab = createBottomTabNavigator();
 
-  const MyTabs = () => {
-    return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Restauants" component={RestauantsScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    );
-  };
-
   return (
     <>
       <ThemeProvider theme={theme}>
-        <MyTabs />
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Restauants" component={RestauantsScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
