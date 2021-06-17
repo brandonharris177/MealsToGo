@@ -28,7 +28,7 @@ const caption = (theme) => `
 
 const label = (theme) => `
     font-family: ${theme.fonts.heading};
-    font-size: ${theme.fontSizes.body};
+    font-size: ${theme.fontSizes.title};
     font-weight: ${theme.fontWeights.medium};
 `;
 
