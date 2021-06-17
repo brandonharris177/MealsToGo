@@ -3,7 +3,7 @@ import { Searchbar } from "react-native-paper";
 import { RestaurantCard } from "../components/RestaurantCard";
 import { SearchView, ResturantList } from "./Resturants.screen.styling";
 
-export const RestauantsScreen = () => {
+export const RestaurantsScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const onChangeSearch = (query) => setSearchQuery(query);

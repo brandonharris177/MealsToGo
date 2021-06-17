@@ -10,9 +10,9 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { RestauantsScreen } from "./src/features/restaurants/screens/Restaurants.screen";
+import { RestaurantsScreen } from "./src/features/restaurants/screens/Restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
-import { Container } from "./App.styling";
+import { Container, tabBarOptions } from "./App.styling";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -45,31 +45,44 @@ export default function App() {
     );
   };
 
+  const Screens = {
+    Restaurants: {
+      focus: "restaurant",
+      notFocus: "restaurant-outline",
+    },
+    Map: {
+      focus: "md-map",
+      notFocus: "md-map-outline",
+    },
+    Settings: {
+      focus: "settings",
+      notFocus: "settings-outline",
+    },
+  };
+
+  const CreateScreenOptions = ({ route }) => ({
+    tabBarIcon: ({ focused, color, size }) => {
+      let focusSetting;
+      if (focused === true) {
+        focusSetting = "focus";
+      } else {
+        focusSetting = "notFocus";
+      }
+      let iconName = Screens[route.name][focusSetting];
+      return <Ionicons name={iconName} size={size} color={color} />;
+    },
+  });
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <Container>
           <NavigationContainer>
             <Tab.Navigator
-              screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
-                  let iconName;
-                  if (route.name === "Restauants") {
-                    iconName = focused ? "restaurant" : "restaurant-outline";
-                  } else if (route.name === "Map") {
-                    iconName = focused ? "navigate" : "navigate-outline";
-                  } else if (route.name === "Settings") {
-                    iconName = focused ? "settings" : "settings-outline";
-                  }
-                  return <Ionicons name={iconName} size={size} color={color} />;
-                },
-              })}
-              tabBarOptions={{
-                activeTintColor: "tomato",
-                inactiveTintColor: "gray",
-              }}
+              screenOptions={CreateScreenOptions}
+              tabBarOptions={tabBarOptions}
             >
-              <Tab.Screen name="Restauants" component={RestauantsScreen} />
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
               <Tab.Screen name="Map" component={Map} />
               <Tab.Screen name="Settings" component={Settings} />
             </Tab.Navigator>
