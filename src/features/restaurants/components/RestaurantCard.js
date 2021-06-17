@@ -1,10 +1,10 @@
 import React from "react";
-import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Text } from "../../../components/typography/text.component";
 import {
+  CardContent,
   CardCover,
   IconWrapper,
   RatingOpenWrapper,
@@ -13,7 +13,7 @@ import {
   TypeIcon,
 } from "./RestaurantCardStyling.js";
 
-export const RestaurantInfo = ({ restaurant = {} }) => {
+export const RestaurantCard = ({ restaurant = {} }) => {
   const {
     name = "Restaurant Name Unavailable",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
@@ -36,7 +36,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
           uri: photos[0],
         }}
       />
-      <Card.Content>
+      <CardContent>
         <Text variant="label">{name}</Text>
         <RatingOpenWrapper>
           {rating !== null ? (
@@ -66,7 +66,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
           </IconWrapper>
         </RatingOpenWrapper>
         <Text variant="caption">{adress}</Text>
-      </Card.Content>
+      </CardContent>
     </StyledCard>
   );
 };
