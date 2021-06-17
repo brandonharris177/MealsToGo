@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { RestaurantsScreen } from "../restaurants/screens/Restaurants.screen";
+import { RestaurantsScreen } from "../../features/restaurants/screens/Restaurants.screen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";

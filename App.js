@@ -6,7 +6,7 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { Navigation } from "./src/features/navigation/Navigation";
+import { Navigation } from "./src/components/navigation/Navigation";
 import { theme } from "./src/infrastructure/theme";
 import { Container } from "./App.styling";
 
