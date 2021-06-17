@@ -13,7 +13,7 @@ import {
   TypeIcon,
 } from "./RestaurantCardStyling.js";
 
-export const RestaurantInfo = ({ restaurant = {} }) => {
+export const RestaurantCard = ({ restaurant = {} }) => {
   const {
     name = "Restaurant Name Unavailable",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Searchbar } from "react-native-paper";
-import { RestaurantInfo } from "../components/RestaurantCard";
-import { Container, SearchView, ListView } from "./Resturants.screen.styling";
+import { RestaurantCard } from "../components/RestaurantCard";
+import {
+  Container,
+  SearchView,
+  ResturantList,
+} from "./Resturants.screen.styling";
 
 export const RestauantsScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -17,9 +21,11 @@ export const RestauantsScreen = () => {
             value={searchQuery}
           />
         </SearchView>
-        <ListView>
-          <RestaurantInfo />
-        </ListView>
+        <ResturantList
+          data={[{ name: "1" }, { name: "2" }, { name: "3" }]}
+          renderItem={() => <RestaurantCard />}
+          keyExtractor={(item) => item.name}
+        />
       </Container>
     </>
   );

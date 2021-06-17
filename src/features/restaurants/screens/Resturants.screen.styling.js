@@ -1,5 +1,11 @@
 import styled from "styled-components/native";
-import { Platform, SafeAreaView, StatusBar, View } from "react-native";
+import {
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  View,
+} from "react-native";
 
 const isAndroid = Platform.OS === "android";
 
@@ -10,10 +16,8 @@ export const Container = styled(SafeAreaView)`
 
 export const SearchView = styled(View)`
   justify-content: center;
-  padding: ${(props) => props.theme.space[1]};
 `;
 
-export const ListView = styled(View)`
+export const ResturantList = styled(FlatList)`
   flex: 1;
-  padding: ${(props) => props.theme.space[3]};
 `;

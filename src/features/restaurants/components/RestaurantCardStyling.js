@@ -4,6 +4,8 @@ import { Image, View } from "react-native";
 
 export const StyledCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
+  margin: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const CardCover = styled(Card.Cover)`
