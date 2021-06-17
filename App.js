@@ -10,6 +10,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { RestauantsScreen } from "./src/features/restaurants/screens/Restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
+import { Container } from "./App.styling";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -29,11 +30,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="Restauants" component={RestauantsScreen} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <Container>
+          <NavigationContainer>
+            <Tab.Navigator>
+              <Tab.Screen name="Restauants" component={RestauantsScreen} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </Container>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
