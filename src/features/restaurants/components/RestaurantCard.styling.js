@@ -11,7 +11,6 @@ export const StyledCard = styled(Card)`
 `;
 
 export const CardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
   color: ${(props) => props.theme.colors.bg.primary};
 `;
 
@@ -22,12 +21,14 @@ export const CardContent = styled(Card.Content)`
 export const RatingOpenWrapper = styled(View)`
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const RatingWrapper = styled(View)`
   flex-direction: row;
   padding-bottom: ${(props) => props.theme.space[2]};
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const IconWrapper = styled(View)`
@@ -35,8 +36,9 @@ export const IconWrapper = styled(View)`
   align-items: center;
 `;
 
+export const StatusWraper = styled(View)``;
+
 export const TypeIcon = styled(Image)`
-  width: ${(props) => props.theme.sizes[1]};
-  height: ${(props) => props.theme.sizes[1]};
-  margin-left: ${(props) => props.theme.space[2]};
+  width: ${(props) => props.theme.sizes[2]};
+  height: ${(props) => props.theme.sizes[2]};
 `;
