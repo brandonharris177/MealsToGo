@@ -5,7 +5,7 @@ import { SearchView, ResturantList } from "./Resturants.screen.styling";
 import { RestaurantsContext } from "../../../services/restaurants/Restaurants.context";
 
 export const RestaurantsScreen = () => {
-  const restaurantsContext = useContext(RestaurantsContext);
+  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -20,8 +20,10 @@ export const RestaurantsScreen = () => {
         />
       </SearchView>
       <ResturantList
-        data={restaurantsContext.restaurants}
-        renderItem={() => <RestaurantCard />}
+        data={restaurants}
+        renderItem={({ item }) => {
+          return <RestaurantCard restaurant={item} />;
+        }}
         keyExtractor={(item) => item.name}
       />
     </>

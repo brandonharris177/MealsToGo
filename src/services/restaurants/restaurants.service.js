@@ -13,6 +13,11 @@ export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
 
 export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
+    if (restaurant.photos[0].html_attributions) {
+      restaurant.photos = restaurant.photos[0].html_attributions;
+    } else {
+      restaurant.photos = [];
+    }
     return {
       ...restaurant,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,

@@ -11,7 +11,6 @@ export const StyledCard = styled(Card)`
 `;
 
 export const CardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
   color: ${(props) => props.theme.colors.bg.primary};
 `;
 
