@@ -9,6 +9,7 @@ import {
   IconWrapper,
   RatingOpenWrapper,
   RatingWrapper,
+  StatusWraper,
   StyledCard,
   TypeIcon,
 } from "./RestaurantCard.styling.js";
@@ -20,7 +21,7 @@ const photoNotFound =
 export const RestaurantCard = ({ restaurant = {} }) => {
   const {
     name = "Restaurant Name Unavailable",
-    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    icon = null,
     photos = [photoNotFound],
     adress = "Restaurant Adress Unavailable",
     isOpenNow = null,
@@ -45,7 +46,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
             <>
               <RatingWrapper>
                 {ratingArray.map(() => (
-                  <SvgXml xml={star} width={20} height={20} />
+                  <SvgXml xml={star} width={25} height={25} />
                 ))}
               </RatingWrapper>
             </>
@@ -55,15 +56,17 @@ export const RestaurantCard = ({ restaurant = {} }) => {
             </RatingWrapper>
           )}
           <IconWrapper>
-            {isClosedTemporarily === true ? (
-              <Text variant="error">TEMPORARILY CLOSED</Text>
-            ) : isOpenNow === null ? (
-              <Text variant="error">HOURS UNKNOWN</Text>
-            ) : isOpenNow === true ? (
-              <SvgXml xml={open} width={20} height={20} />
-            ) : (
-              <Text variant="error">CLOSED</Text>
-            )}
+            <StatusWraper>
+              {isClosedTemporarily === true ? (
+                <Text variant="error">TEMPORARILY CLOSED</Text>
+              ) : isOpenNow === null ? (
+                <Text variant="error">HOURS UNKNOWN</Text>
+              ) : isOpenNow === true ? (
+                <SvgXml xml={open} width={40} height={40} />
+              ) : (
+                <Text variant="error">CLOSED</Text>
+              )}
+            </StatusWraper>
             {icon && <TypeIcon source={{ uri: icon }} />}
           </IconWrapper>
         </RatingOpenWrapper>
