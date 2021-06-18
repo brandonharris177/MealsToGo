@@ -1,7 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Searchbar } from "react-native-paper";
+import { Colors, ActivityIndicator, Searchbar } from "react-native-paper";
 import { RestaurantCard } from "../components/RestaurantCard";
-import { SearchView, ResturantList } from "./Resturants.screen.styling";
+import {
+  SearchView,
+  ResturantList,
+  ActivityIndicatorView,
+} from "./Resturants.screen.styling";
 import { RestaurantsContext } from "../../../services/restaurants/Restaurants.context";
 
 export const RestaurantsScreen = () => {
@@ -19,13 +23,23 @@ export const RestaurantsScreen = () => {
           value={searchQuery}
         />
       </SearchView>
-      <ResturantList
-        data={restaurants}
-        renderItem={({ item }) => {
-          return <RestaurantCard restaurant={item} />;
-        }}
-        keyExtractor={(item) => item.name}
-      />
+      {isLoading ? (
+        <ActivityIndicatorView>
+          <ActivityIndicator
+            size={150}
+            animating={true}
+            color={Colors.blue800}
+          />
+        </ActivityIndicatorView>
+      ) : (
+        <ResturantList
+          data={restaurants}
+          renderItem={({ item }) => {
+            return <RestaurantCard restaurant={item} />;
+          }}
+          keyExtractor={(item) => item.name}
+        />
+      )}
     </>
   );
 };
