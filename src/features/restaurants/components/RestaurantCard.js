@@ -23,7 +23,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
     name = "Restaurant Name Unavailable",
     icon = null,
     photos = [photoNotFound],
-    adress = "Restaurant Adress Unavailable",
+    address = "Restaurant address Unavailable",
     isOpenNow = null,
     rating = null,
     isClosedTemporarily = false,
@@ -70,7 +70,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
             {icon && <TypeIcon source={{ uri: icon }} />}
           </IconWrapper>
         </RatingOpenWrapper>
-        <Text variant="caption">{adress}</Text>
+        <Text variant="caption">{address}</Text>
       </CardContent>
     </StyledCard>
   );
