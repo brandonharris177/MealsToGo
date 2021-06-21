@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Colors, ActivityIndicator, Searchbar } from "react-native-paper";
+import React, { useContext } from "react";
+import { Colors, ActivityIndicator } from "react-native-paper";
 import { RestaurantCard } from "../components/RestaurantCard";
 import {
   SearchView,
@@ -7,21 +7,15 @@ import {
   ActivityIndicatorView,
 } from "./Resturants.screen.styling";
 import { RestaurantsContext } from "../../../services/restaurants/Restaurants.context";
+import { Search } from "../components/Search.component";
 
 export const RestaurantsScreen = () => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const onChangeSearch = (query) => setSearchQuery(query);
   return (
     <>
       <SearchView>
-        <Searchbar
-          placeholder="Search"
-          onChangeText={onChangeSearch}
-          value={searchQuery}
-        />
+        <Search />
       </SearchView>
       {isLoading ? (
         <ActivityIndicatorView>
