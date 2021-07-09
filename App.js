@@ -27,16 +27,16 @@ export default function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Container>
+      <Container>
+        <ThemeProvider theme={theme}>
           <LocationContextProvider>
             <RestaurantsContextProvider>
               <Navigation />
             </RestaurantsContextProvider>
           </LocationContextProvider>
-        </Container>
-      </ThemeProvider>
-      <ExpoStatusBar style="auto" />
+        </ThemeProvider>
+        <ExpoStatusBar style="auto" />
+      </Container>
     </>
   );
 }
