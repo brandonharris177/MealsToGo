@@ -10,7 +10,7 @@ import { RestaurantsContext } from "../../../services/restaurants/Restaurants.co
 import { Search } from "../components/Search.component";
 
 export const RestaurantsScreen = () => {
-  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+  const { restaurants, isLoading } = useContext(RestaurantsContext);
 
   return (
     <>

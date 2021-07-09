@@ -10,10 +10,6 @@ export const Search = () => {
     setSearchKeyword(text);
   };
 
-  useEffect(() => {
-    search(searchKeyword);
-  }, []);
-
   return (
     <Searchbar
       placeholder="Search by location"
