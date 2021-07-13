@@ -6,9 +6,9 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { RestaurantsContextProvider } from "./src/services/restaurants/Restaurants.context";
-import { LocationContextProvider } from "./src/services/location/Location.context";
+import { LocationContextProvider } from "./src/infrastructure/navigation/index";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { Navigation } from "./src/components/navigation/Navigation";
+import { Navigation } from "./src/infrastructure/navigation/index";
 import { theme } from "./src/infrastructure/theme";
 import { Container } from "./App.styling";
 
