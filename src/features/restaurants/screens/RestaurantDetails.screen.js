@@ -1,6 +1,13 @@
 import React from "react";
-import { Text } from "react-native";
+import { RestaurantCard } from "../components/RestaurantCard";
 
-export const RestaurantDetail = () => {
-  return <Text>Hello Details</Text>;
+import { SafeAreaView } from "react-native";
+
+export const RestaurantDetail = ({ route }) => {
+  const { item } = route.params;
+  return (
+    <SafeAreaView>
+      <RestaurantCard restaurant={item} />
+    </SafeAreaView>
+  );
 };
