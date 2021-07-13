@@ -6,7 +6,7 @@ import {
   ResturantList,
   ActivityIndicatorView,
 } from "./Resturants.screen.styling";
-import { RestaurantsContext } from "../../../services/restaurants/Restaurants.context";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/Search.component";
 
 export const RestaurantsScreen = () => {
