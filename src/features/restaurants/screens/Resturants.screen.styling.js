@@ -3,7 +3,7 @@ import { FlatList, View } from "react-native";
 
 export const SearchView = styled(View)`
   justify-content: center;
-  margin: ${(props) => props.theme.space[1]};
+  margin-top: ${(props) => props.theme.space[1]};
 `;
 
 export const ResturantList = styled(FlatList)`
