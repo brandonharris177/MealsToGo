@@ -1,13 +1,14 @@
 import React from "react";
 import { RestaurantCard } from "../components/RestaurantCard";
-
-import { SafeAreaView } from "react-native";
+import { RestaurantMenu } from "../components/RestaurantMenu.js";
+import { DetailsSafeAreaView } from "./RestaurantDetails.screen.styling";
 
 export const RestaurantDetail = ({ route }) => {
   const { item } = route.params;
   return (
-    <SafeAreaView>
+    <DetailsSafeAreaView>
       <RestaurantCard restaurant={item} />
-    </SafeAreaView>
+      <RestaurantMenu />
+    </DetailsSafeAreaView>
   );
 };
