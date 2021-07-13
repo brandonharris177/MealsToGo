@@ -13,8 +13,8 @@ export const RestaurantMenu = () => {
           }}
           left={(props) => <List.Icon {...props} icon="coffee" />}
         >
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Eggs Benedict" />
+          <List.Item title="Classic Breakfast" />
         </List.Accordion>
         <List.Accordion
           title="Lunch"
@@ -23,8 +23,9 @@ export const RestaurantMenu = () => {
           }}
           left={(props) => <List.Icon {...props} icon="food-variant" />}
         >
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Burger w/ Fries" />
+          <List.Item title="Steak Sandwich" />
+          <List.Item title="Mushroom Soup" />
         </List.Accordion>
         <List.Accordion
           title="Dinner"
@@ -33,8 +34,9 @@ export const RestaurantMenu = () => {
           }}
           left={(props) => <List.Icon {...props} icon="food" />}
         >
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Spaghetti Bolognese" />
+          <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />
+          <List.Item title="Steak Frites" />
         </List.Accordion>
         <List.Accordion
           title="Drinks"
@@ -43,8 +45,11 @@ export const RestaurantMenu = () => {
           }}
           left={(props) => <List.Icon {...props} icon="cup" />}
         >
-          <List.Item title="First item" />
-          <List.Item title="Second item" />
+          <List.Item title="Coffee" />
+          <List.Item title="Tea" />
+          <List.Item title="Modelo" />
+          <List.Item title="Coke" />
+          <List.Item title="Fanta" />
         </List.Accordion>
       </List.Section>
     </ScrollView>
