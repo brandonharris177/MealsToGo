@@ -8,7 +8,7 @@ import {
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/Location.context";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { Navigation } from "./src/components/navigation/Navigation";
+import { Navigation } from "./src/infrastructure/navigation/index";
 import { theme } from "./src/infrastructure/theme";
 import { Container } from "./App.styling";
 
@@ -27,16 +27,16 @@ export default function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Container>
+      <Container>
+        <ThemeProvider theme={theme}>
           <LocationContextProvider>
             <RestaurantsContextProvider>
               <Navigation />
             </RestaurantsContextProvider>
           </LocationContextProvider>
-        </Container>
-      </ThemeProvider>
-      <ExpoStatusBar style="auto" />
+        </ThemeProvider>
+        <ExpoStatusBar style="auto" />
+      </Container>
     </>
   );
 }
